@@ -49,6 +49,7 @@ def get_shortest(dirs, split_str):
             # Find how many directories start with the investigated split_str_sub (sub string)
             if dir.startswith(split_str_sub):
                 match_count = match_count + 1
+            # Deleting the dir if not match is costly in lists ( O(n) ). ToDo: Find an alternative.
         # If only 1 match is found, then we found the shortest unique string
         if match_count == 1:
             return split_str_sub
